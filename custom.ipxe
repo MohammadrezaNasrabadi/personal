@@ -10,13 +10,13 @@ set install_params auto=true priority=critical preseed/url=https://www.debian.or
 goto deb_text
 
 :deb_text
-set dir debian/dists/bullseye/installer-amd64/current/images/netboot/debian-installer/amd64
+set dir debian/dists/bullseye/main/installer-amd64/current/images/netboot/debian-installer/amd64
 goto deb_boot
 
 :deb_boot
 imgfree
-kernel http://archive.debian.org/${dir}/linux ${install_params} ${netcfg} mirror/suite=bullseye initrd=initrd.magic ${cmdline}
-initrd http://archive.debian.org/${dir}/initrd.gz
+kernel http://deb.debian.org/${dir}/linux ${install_params} ${netcfg} mirror/suite=bullseye initrd=initrd.magic ${cmdline}
+initrd http://deb.debian.org/${dir}/initrd.gz
 echo
 echo MD5sums:
 md5sum linux initrd.gz
